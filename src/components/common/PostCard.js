@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Buffer } from "buffer"
 import Bloby from "./Bloby"
@@ -24,7 +23,7 @@ const PostCard = ({ post }) => {
                     }}>
                         <Bloby parentColor={postcolor} width={320} height={200} blobRadius={rand(50, 100)} lineWidth={rand(20, 200)}/>
                     </div>}
-                {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={false} /></div>}
+                
                 {post.featured && <span>Featured</span>}
                 <h2 className="post-card-title">{post.title}</h2>
             </header>
