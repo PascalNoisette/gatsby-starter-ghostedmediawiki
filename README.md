@@ -36,3 +36,21 @@ The default mediawiki backend that is used is wikipedia for demo purposes. You m
 }
 
 ```
+
+
+# Run the demo
+
+## Quickstart
+
+`docker run --rm --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest`
+
+You can now view gatsby-starter-ghostedmediawiki in the browser.
+⠀
+  http://localhost:8000/
+
+
+## Custom backend
+
+Create a file named .ghost.json and configure the access to a custom backend.
+
+```docker run -v  `pwd`/.ghost.json:/var/www/.ghost.json  --rm --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest```
