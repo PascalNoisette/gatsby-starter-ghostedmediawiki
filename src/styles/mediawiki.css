@@ -1,0 +1,31 @@
+.content-title {
+    margin: 0 0 0em;
+}
+.site-banner {
+    padding: 5vw 0;
+}
+
+.mw-editsection{
+    display: none;
+}
+
+#toc{
+    float: left;
+    position: fixed;
+    left: 0;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    top: 13rem;
+    height: 100%;
+    width: 18em;
+    margin: 0px;
+}
+
+#toc::-webkit-scrollbar {
+    display: none;
+}
+
+.post-card-image-replacement {
+    height: 200px;
+}

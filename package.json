@@ -1,0 +1,33 @@
+{
+  "name": "gatsby-starter-ghostedmediawiki",
+  "version": "1.0.0",
+  "description": "Gatsby starter for mediawiki based on ghost starter",
+  "main": "index.js",
+  "scripts": {
+    "serve": "gatsby build && NODE_ENV=production gatsby serve",
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "lint": "eslint . --ext .js --cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PascalNoisette/gatsby-starter-ghostedmediawiki.git"
+  },
+  "keywords": [
+    "mediawiki",
+    "gatsby",
+    "gatsby-starter"
+  ],
+  "author": "Pascal Noisette",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PascalNoisette/gatsby-starter-ghostedmediawiki/issues"
+  },
+  "homepage": "https://github.com/PascalNoisette/gatsby-starter-ghostedmediawiki#readme",
+  "dependencies": {
+    "gatsby": "^3.12.1",
+    "gatsby-source-ghostedmediawiki": "git+https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki",
+    "gatsby-starter-ghost": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+  }
+}
