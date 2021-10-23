@@ -1,0 +1,3 @@
+FROM netpascal0123/gatsby-starter-ghostedmediawiki:latest
+
+COPY . /var/www

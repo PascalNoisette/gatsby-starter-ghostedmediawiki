@@ -18,7 +18,7 @@ The default mediawiki backend that is used is wikipedia for demo purposes. You m
     "path": "/w",
     "debug": true, 
     "userAgent": "Gatsby",
-    "title" : "MediaWiki meet Gatsby",
+    "title" : "MediaWiki meets Gatsby",
     "description" : "Mediawiki with Gatsby frontend",
     "lang":"FR",
     "timezone":"GMT+2",
@@ -54,3 +54,17 @@ You can now view gatsby-starter-ghostedmediawiki in the browser.
 Create a file named .ghost.json and configure the access to a custom backend.
 
 ```docker run -v  `pwd`/.ghost.json:/var/www/.ghost.json  --rm --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest```
+
+
+## Development mode
+
+I am currently improving gatsby-source-ghostedmediawiki  and gatsby-starter-ghostedmediawiki
+
+```
+git clone https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki 
+cd gatsby-source-ghostedmediawiki 
+mkdir node_modules
+git clone https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki node_modules/gatsby-source-ghostedmediawiki 
+docker build -t ghostedmediawiki -f Dockerfile-dev . && docker run --rm --net=host -it ghostedmediawiki
+
+```
