@@ -5,7 +5,7 @@
     "path": "/w",
     "debug": true, 
     "userAgent": "Gatsby",
-    "title" : "MediaWiki meet Gatsby",
+    "title" : "MediaWiki meets Gatsby",
     "description" : "Mediawiki with Gatsby frontend",
     "lang":"FR",
     "timezone":"GMT+2",
