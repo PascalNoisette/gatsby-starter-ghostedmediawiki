@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter-ghostedmediawiki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gatsby starter for mediawiki based on ghost starter",
   "main": "index.js",
   "scripts": {
