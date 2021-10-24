@@ -6277,8 +6277,8 @@ gatsby-source-ghost@4.2.4, gatsby-source-ghost@^4.2.4:
     qs "6.10.1"
 
 "gatsby-source-ghostedmediawiki@git+https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki":
-  version "1.0.2"
-  resolved "git+https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki#ed053e394044c68bbe1236fc2bfbbf22085e09d3"
+  version "1.1.0"
+  resolved "git+https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki#1f45512d5757388db49665a5613913efeb590bf1"
   dependencies:
     gatsby-source-ghost "^4.2.4"
     nodemw "^0.15.0"
