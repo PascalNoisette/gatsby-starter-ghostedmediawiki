@@ -1,3 +1,5 @@
 FROM netpascal0123/gatsby-starter-ghostedmediawiki:latest
 
 COPY . /var/www
+
+CMD ["/var/www/node_modules/.bin/gatsby", "develop", "--host=0.0.0.0"]

@@ -1,0 +1,22 @@
+{
+  "protocol" : "https",
+  "server" : "en.wikipedia.org",
+  "siteUrl" : "http://localhost:8000",
+  "path": "/w",
+  "debug": true, 
+  "userAgent": "Gatsby",
+  "title" : "MediaWiki meets Gatsby",
+  "description" : "Mediawiki with Gatsby frontend",
+  "lang":"FR",
+  "timezone":"GMT+2",
+  "codeinjection_head":"",
+  "codeinjection_foot":"",
+  "codeinjection_styles":"",
+  "rootCategory": "Linebred_animals",
+  "navigation" : [
+    {
+      "label":"Home",
+      "url":"/"
+    }
+  ]
+}

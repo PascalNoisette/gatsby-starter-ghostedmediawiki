@@ -22,4 +22,4 @@ RUN chown -R node:node /var/www
 WORKDIR /var/www
 USER node
 RUN yarn
-CMD ["/var/www/node_modules/.bin/gatsby", "develop"]
+CMD ["/bin/bash", "-c", "/var/www/node_modules/.bin/gatsby build && /var/www/node_modules/.bin/gatsby serve --host=0.0.0.0"]

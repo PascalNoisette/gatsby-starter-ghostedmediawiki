@@ -8,11 +8,10 @@ A lot of gatsby-starter-ghost is conveniently reused for its pretty design and w
 
 # Configuration
 
-The default mediawiki backend that is used is wikipedia for demo purposes. You may need to edit `.ghost.json` settings to use your own backend. For example, I use this project to pull a selection of articles I have tagged under the rootCategory [[Category:Featured]] in my private mediawiki instance.
+The default mediawiki backend that is used is wikipedia for demo purposes. You may need to edit `.mediawiki.json` settings to use your own backend. For example, I use this project to pull a selection of articles I have tagged under the rootCategory [[Category:Featured]] in my private mediawiki instance.
 
 ```json
 {
-  "development": {
     "protocol" : "https",
     "server" : "en.wikipedia.org",
     "path": "/w",
@@ -31,8 +30,7 @@ The default mediawiki backend that is used is wikipedia for demo purposes. You m
         "label":"Home",
         "url":"/"
       }
-  ]
-  }
+    ]
 }
 
 ```
@@ -42,18 +40,18 @@ The default mediawiki backend that is used is wikipedia for demo purposes. You m
 
 ## Quickstart
 
-`docker run --rm --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest`
+`docker run --rm --init --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest`
 
 You can now view gatsby-starter-ghostedmediawiki in the browser.
 ⠀
-  http://localhost:8000/
+  http://localhost:9000/
 
 
 ## Custom backend
 
-Create a file named .ghost.json and configure the access to a custom backend.
+Create a file named .mediawiki.json and configure the access to a custom backend.
 
-```docker run -v  `pwd`/.ghost.json:/var/www/.ghost.json  --rm --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest```
+```docker run --init -v  `pwd`/.mediawiki.json:/var/www/.mediawiki.json  --rm --net=host netpascal0123/gatsby-starter-ghostedmediawiki:latest```
 
 
 ## Development mode
@@ -65,6 +63,6 @@ git clone https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki
 cd gatsby-source-ghostedmediawiki 
 mkdir node_modules
 git clone https://github.com/PascalNoisette/gatsby-source-ghostedmediawiki node_modules/gatsby-source-ghostedmediawiki 
-docker build -t ghostedmediawiki -f Dockerfile-dev . && docker run --rm --net=host -it ghostedmediawiki
+docker build -t ghostedmediawiki -f Dockerfile-dev . && docker run --rm --net=host --init -it ghostedmediawiki
 
 ```
