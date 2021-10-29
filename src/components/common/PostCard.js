@@ -2,14 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-import { Buffer } from "buffer"
 import Bloby from "./Bloby"
+import {rand, postcolor} from "../../utils/Helper"
 
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
     const readingTime = readingTimeHelper(post)
-    const rand = (min, max) => min+Math.floor(Math.random() * max);
-    const postcolor = `#${Buffer.from(post.title, 'utf8').toString('hex').substr(1,6)}`;
     return (
         <Link to={url} className="post-card">
             <header className="post-card-header">
@@ -19,9 +17,9 @@ const PostCard = ({ post }) => {
                     }}></div>}
                 {!post.feature_image &&
                     <div className="post-card-image-replacement" style={{
-                    backgroundColor: postcolor,
+                    backgroundColor: postcolor(post),
                     }}>
-                        <Bloby parentColor={postcolor} width={320} height={200} blobRadius={rand(50, 100)} lineWidth={rand(20, 200)}/>
+                        <Bloby parentColor={postcolor(post)} width={320} height={200} blobRadius={rand(50, 100)} lineWidth={rand(20, 200)}/>
                     </div>}
                 
                 {post.featured && <span>Featured</span>}

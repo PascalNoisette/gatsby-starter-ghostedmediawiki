@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../../node_modules/gatsby-starter-ghost/src/components/common/Layout'
+import Layout from '../components/common/Layout'
 import PostCard from '../components/common/PostCard'
 import Pagination from '../../node_modules/gatsby-starter-ghost/src/components/common/Pagination'
 import MetaData from '../../node_modules/gatsby-starter-ghost/src/components/common/meta/MetaData'
 
-import '../styles/mediawiki.css'
 
 /**
 * Main index page (home page)

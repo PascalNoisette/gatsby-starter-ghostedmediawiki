@@ -1,6 +1,6 @@
 import React from 'react'
 import uuid from 'uuid';
-
+import {rand} from "../../utils/Helper"
 
 const Bloby = ({parentColor, width, height, blobRadius, lineWidth}) => {
     /** Ibrahim Tanyalcin, . (2015). BLOB.js: Blob1.0.4.2 */
@@ -280,7 +280,6 @@ const Bloby = ({parentColor, width, height, blobRadius, lineWidth}) => {
         window.requestAnimationFrame(animate);
     };
 
-    const rand = (min, max) => min+Math.floor(Math.random() * max)
     const addDivRef = React.useCallback(
         (divGraph) => {
             try {

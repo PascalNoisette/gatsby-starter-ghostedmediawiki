@@ -1,12 +1,12 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-
-import Layout  from '../../node_modules/gatsby-starter-ghost/src/components/common/Layout'
+import Layout  from '../components/common/Layout'
 import MetaData from '../../node_modules/gatsby-starter-ghost/src/components/common/meta/MetaData'
 
-import '../styles/mediawiki.css'
+import {postcolor} from "../utils/Helper"
 /**
 * Single post view (/:slug)
 *
@@ -16,6 +16,19 @@ import '../styles/mediawiki.css'
 const Post = ({ data, location }) => {
     const post = data.ghostPost
 
+    const [postContentDiv, setPostContentDiv] = useState(null);
+    useEffect(() => {
+        const jsconfigvars = JSON.parse(post.codeinjection_head).jsconfigvars;
+        Object.getOwnPropertyNames(jsconfigvars.wgGraphSpecs??{}).map(id => {
+            //vegaEmbed(`#${id}`, jsconfigvars.wgGraphSpecs[id]);
+        })
+    }, [postContentDiv]);
+
+    post.codeinjection_styles = `${post.codeinjection_styles??""} 
+        :root {
+            --color-base: ${postcolor(post)};
+        }
+        `;
     return (
         <>
             <MetaData
@@ -25,6 +38,24 @@ const Post = ({ data, location }) => {
             />
             <Helmet>
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
+                <script>
+                {
+                `
+                    MathJax = {
+                    loader: {load: ['[tex]/mhchem']},
+                    tex: {
+                        packages: {'[+]': ['mhchem']},
+                        inlineMath: [["[math]","[/math]"]]
+                    }
+                    };
+                `
+                }
+                </script>
+                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+                <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
             </Helmet>
             <Layout>
                 <div className="container">
@@ -40,6 +71,7 @@ const Post = ({ data, location }) => {
                             <section
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
+                                ref={setPostContentDiv}
                             />
                         </section>
                     </article>

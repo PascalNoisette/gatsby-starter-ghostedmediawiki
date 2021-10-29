@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Layout from '../../node_modules/gatsby-starter-ghost/src/components/common/Layout'
+import Layout from '../components/common/Layout'
 import PostCard from '../components/common/PostCard'
 import Pagination from '../../node_modules/gatsby-starter-ghost/src/components/common/Pagination'
 import MetaData from '../../node_modules/gatsby-starter-ghost/src/components/common/meta/MetaData'
@@ -28,8 +28,11 @@ const Tag = ({ data, location, pageContext }) => {
                 <div className="container">
                     <header className="tag-header">
                         <h1>{tag.name}</h1>
-                        {tag.description ? <p>{tag.description}</p> : null }
                     </header>
+                    {tag.description ? <section
+                            className="content-body load-external-scripts"
+                            dangerouslySetInnerHTML={{ __html: tag.description }}
+                        /> : null }
                     <section className="post-feed">
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
